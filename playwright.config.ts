@@ -24,7 +24,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     baseURL: process.env.BASE_URL || 'https://www.linkedin.com',
-    headless: false,
+    headless: true,
     actionTimeout: process.env.ACTION_TIMEOUT ? parseInt(process.env.ACTION_TIMEOUT) : 30000,
     // storageState: 'storageState.json',
 
