@@ -25,7 +25,6 @@ export class JobAction {
 
     async searchJob(title: string) {
         ActionLogger.info('Starting job search', { title });
-        
         await SafeActions.fill(
             this.page.locator(locators.searchJobInput), 
             title, 
@@ -247,11 +246,7 @@ export class JobAction {
     }
 
     async setEasyApplyButtonIsTrue(): Promise<void> {
-        await expect(this.page.locator(locators.filterButton)).toBeVisible({timeout: 30000});
         await SafeActions.click(this.page.locator(locators.filterButton), 'click filter button');
-        await this.page.waitForTimeout(5000)
-        const easyApplyOption = this.page.locator(locators.enableEasyApplyButton)
-        await easyApplyOption.scrollIntoViewIfNeeded()
         await SafeActions.click(this.page.locator(locators.enableEasyApplyButton), 'enable easy apply toggled');
         await SafeActions.click(this.page.locator(locators.applyFilterButton), 'click button to show result');
     }

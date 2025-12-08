@@ -1,5 +1,5 @@
 export const locators = {
-    searchJobInput: 'input[id*="jobs-search-box-keyword-id"]',
+    searchJobInput: 'input[placeholder="Title, skill or Company"]',
     selectedJob: 'jobs-search__job-details',
     jobDetailTopCard: '//div[contains(@class, "job-details-jobs-unified-top-card__container")]',
     applyButton: '#jobs-apply-button-id',
